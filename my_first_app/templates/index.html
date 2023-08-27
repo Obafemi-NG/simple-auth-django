@@ -1,0 +1,16 @@
+<div>
+  {% if user.is_authenticated %}
+  <h3>Hello there, {{user.username}}</h3>
+  {% else %}
+  <h3>Hello there!</h3>
+  {% endif %} {% for todo in todo_list %}
+  <div>
+    <p>{{todo.title}}</p>
+    <p>{{todo.description}}</p>
+  </div>
+  {% endfor %} {% if user.is_authenticated %}
+  <a href="logout">Logout</a>
+  {% else %}
+  <a href="login"> Login </a>
+  {% endif %}
+</div>
